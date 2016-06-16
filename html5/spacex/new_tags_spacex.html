@@ -248,17 +248,18 @@
                 </nav>
             </aside>
             <section>
-              <h2 class="apply">Apply to SpaceX</h2>
             <form action="http://requestb.in/1m6jqp61" method="post">
               <fieldset>
-              Full Name: <br><input type="text" name="name" id="full-name"><br><br>
-              Bio: <br><textarea name="bio" id="bio" rows="10" cols="30"></textarea><br><br>
-              Select Your Favorite Rocket: <select class="rocket-type" name="rocket-type">
+                <legend>Apply to SpaceX</legend>
+                Full Name: <br><input type="text" name="name" id="full-name"><br><br>
+                Bio: <br><textarea name="bio" id="bio" rows="10" cols="30"></textarea><br><br>
+                Select Your Favorite Rocket:
+                <select class="rocket-type" name="rocket-type">
                 <option value="choose" selected>Choose One</option>
                 <option value="falcon9">Falcon 9</option>
                 <option value="falcon-heavy">Falcon Heavy</option>
                 <option value="dragon">Dragon</option>
-              </select><br><br>
+                </select><br><br>
               Choose Your Age Group:
               <input type="radio" name="age" value="21"> Under 21
               <input type="radio" name="age" value="22" checked> 22-35
@@ -280,11 +281,13 @@
     </aside>
     <hr>
     <footer>
-      <address class="spacex_addy">
-        SpaceX<br/>
-        1 Rocket Road<br/>
-        Hawthorne, CA 90249
-      </address>
+      <article class="contact">
+        <address>
+          SpaceX<br/>
+          1 Rocket Road<br/>
+          Hawthorne, <abbr title="California"></abbr>CA 90250
+        </address>
+      </article>
       Copyright (c) 2016 Copyright Holder All Rights Reserved.
     </footer>
     <audio autoplay controls src="audio/Waves.mp3"></audio>

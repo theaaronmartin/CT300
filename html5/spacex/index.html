@@ -8,7 +8,7 @@
     <header>
       <h1>SpaceX</h1>
       <p>
-        Space Exploration Technologies Corporation, better known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California, USA.
+        Space Exploration Technologies Corporation, better known as <em>SpaceX</em>, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California, USA.
       </p>
     </header>
     <nav>
@@ -84,6 +84,72 @@
             Number of launches per year
           </figcaption>
         </figure>
+        <table>
+          <thead>
+            <tr>
+              <th>Launch Date</th>
+              <th>Launch Location</th>
+              <th>Rocket Used</th>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5/27/16</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>5/6/16</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>4/8/2016</td>
+              <td>Cape Canaveral</td>
+              <td>Dragon &amp; Falcon 9</td>
+            </tr>
+            <tr>
+              <td>3/4/2016</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>1/17/2016</td>
+              <td>Vanderberg</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>12/21/2015</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>4/27/2015</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>4/14/2015</td>
+              <td>Cape Canaveral</td>
+              <td>Dragon &amp; Falcon 9</td>
+            </tr>
+            <tr>
+              <td>2/11/2015</td>
+              <td>Cape Canaveral</td>
+              <td>Falcon 9</td>
+            </tr>
+            <tr>
+              <td>1/10/2015</td>
+              <td>Cape Canaveral</td>
+              <td>Dragon &amp; Falcon 9</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <video autoplay loop muted>
+          <source src="http://techslides.com/demos/sample-videos/small.mp4"/>
+        </video>
         <section>
           <h2 class="goals" id="goals">Goals</h2>
           <p>
@@ -181,6 +247,31 @@
                   </ul>
                 </nav>
             </aside>
+            <section>
+            <form action="http://requestb.in/1m6jqp61" method="post">
+              <fieldset>
+                <legend>Apply to SpaceX</legend>
+                Full Name: <br><input type="text" name="name" id="full-name"><br><br>
+                Bio: <br><textarea name="bio" id="bio" rows="10" cols="30"></textarea><br><br>
+                Select Your Favorite Rocket:
+                <select class="rocket-type" name="rocket-type">
+                <option value="choose" selected>Choose One</option>
+                <option value="falcon9">Falcon 9</option>
+                <option value="falcon-heavy">Falcon Heavy</option>
+                <option value="dragon">Dragon</option>
+                </select><br><br>
+              Choose Your Age Group:
+              <input type="radio" name="age" value="21"> Under 21
+              <input type="radio" name="age" value="22" checked> 22-35
+              <input type="radio" name="age" value="36"> Over 35 <br><br>
+              Select All That Apply:
+              <input type="checkbox" value="1">I am a Pilot
+              <input type="checkbox" value="2">I am a Diver
+              <input type="checkbox" value="3">I Know How to Juggle Cats <br><br>
+              <input type="submit" value="Submit">
+              </fieldset>
+            </form>
+          </section>
       </article>
     </main>
     <aside class="banner">
@@ -190,7 +281,15 @@
     </aside>
     <hr>
     <footer>
+      <article class="contact">
+        <address>
+          SpaceX<br/>
+          1 Rocket Road<br/>
+          Hawthorne, <abbr title="California"></abbr>CA 90250
+        </address>
+      </article>
       Copyright (c) 2016 Copyright Holder All Rights Reserved.
     </footer>
+    <audio autoplay controls src="audio/Waves.mp3"></audio>
   </body>
 </html>

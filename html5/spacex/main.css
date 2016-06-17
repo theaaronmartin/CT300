@@ -1,7 +1,8 @@
 #home {
   background-image: url(http://www.universetoday.com/wp-content/uploads/2016/04/26405462060_81f8289687_k.jpg);
-  background-position: center;
+  background-position: left center;
   height: 172px;
+  background-size: cover;
 }
 
 header > h1, header > p {

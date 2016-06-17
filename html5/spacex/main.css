@@ -1,0 +1,159 @@
+#home {
+  background-image: url(http://www.universetoday.com/wp-content/uploads/2016/04/26405462060_81f8289687_k.jpg);
+  background-position: center;
+  height: 172px;
+}
+
+header > h1, header > p {
+  padding-left: 30px;
+  color: #fff;
+}
+
+h1 small {
+  font-size: 12px;
+  position: relative;
+  top: -15px;
+}
+
+#main{
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+#main li {
+  display: inline;
+  padding: 50px;
+  margin: 65px;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#container {
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+.banner {
+  float: left;
+}
+
+#audio {
+  display: block;
+  margin-left: 25em;
+}
+
+#audio h3 {
+  margin-left: 40px;
+  margin-bottom: -15px;
+  color: #666;
+}
+
+#audio figcaption {
+  text-align: center;
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+#audio figure {
+  margin-bottom: -16px;
+}
+
+.history-banner {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 35px;
+  color: #666;
+}
+
+.back {
+  position: relative;
+  left: 43em;
+  top: -1.5em;
+}
+
+article p {
+  font-weight: 600;
+}
+
+.sections {
+  font-size: 35px;
+  margin-bottom: -5px;
+  color: #666;
+}
+
+.subs {
+  font-size: 20px;
+  color: #666;
+}
+
+#launch-table {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+}
+.titles {
+  background-color: #000;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  /*border: 1px dashed black;*/
+}
+
+td {
+  border: 1px dashed black;
+}
+
+table, th, tr, td {
+  border-collapse: collapse;
+}
+
+.past {
+  color: #666;
+  font-size: 35px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  margin-left: 2px;
+}
+
+#comments h4 {
+  color: #666;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 35px;
+}
+
+#comments h5 {
+  font-size: 18px;
+  margin-bottom: -10px;
+}
+
+#comments small {
+  font-style: italic;
+}
+
+#comments article {
+  border-bottom: 1px solid #eee;
+}
+
+#related-content {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+}
+ .images {
+   float: left;
+ }
+
+.videos figure {
+}

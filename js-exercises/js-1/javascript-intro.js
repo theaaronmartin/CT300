@@ -37,6 +37,9 @@ console.log(students[2].name)
 //  Hint:  You can get the number of objects in an array by using myArray.length
 
 
+students.push({id: 5, name: 'Markus', row: 1, usesMac: true});
+
+
 // 3.  Write a function that adds 5 to a number, then multiplies the result by 50.
 //     Log the result.
 

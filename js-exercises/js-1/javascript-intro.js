@@ -29,6 +29,8 @@ var students = [
   }
 ]
 
+console.log(students[2].name)
+
 // 2.  Write a function to add students to the list of students, then print the
 //     new student object from the object.  Execute the function for 3 new students.
 //  Hint:  You add to an array like this:  myArray.push(object)

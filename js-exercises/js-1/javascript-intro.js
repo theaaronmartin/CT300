@@ -38,10 +38,16 @@ console.log(students[2].name)
 
 
 students.push({id: 5, name: 'Markus', row: 1, usesMac: true});
+students.push({id: 5, name: 'Liam', row: 2, usesMac: false});
+students.push({id: 5, name: 'Dylan', row: 2, usesMac: true});
+console.log(students)
 
 
 // 3.  Write a function that adds 5 to a number, then multiplies the result by 50.
 //     Log the result.
 
+var userNumber = prompt('Pick a number')
+newNumber = (parseFloat(userNumber) + 5) * 50
+console.log(newNumber)
 
 // 4.  Show an example of function scope by logging variables in different scopes.

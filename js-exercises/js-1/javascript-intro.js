@@ -37,10 +37,14 @@ console.log(students[2].name)
 //  Hint:  You can get the number of objects in an array by using myArray.length
 
 
-students.push({id: 5, name: 'Markus', row: 1, usesMac: true});
-students.push({id: 5, name: 'Liam', row: 2, usesMac: false});
-students.push({id: 5, name: 'Dylan', row: 2, usesMac: true});
-console.log(students)
+// students.push({id: 5, name: 'Markus', row: 1, usesMac: true});
+// students.push({id: 5, name: 'Liam', row: 2, usesMac: false});
+// students.push({id: 5, name: 'Dylan', row: 2, usesMac: true});
+// console.log(students)
+
+function addStudent (id, name, row, usesMac) {
+  students.push({id: id, name: name, row: row, usesMac: usesMac});
+}
 
 
 // 3.  Write a function that adds 5 to a number, then multiplies the result by 50.

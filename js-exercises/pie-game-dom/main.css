@@ -1,0 +1,26 @@
+body {
+  background-image: url(http://www.wall321.com/thumbnails/detail/20130712/apple%20inc%20pi%20pun%20apple%20pie_www.wall321.com_64.jpg);
+  color: #fff;
+}
+
+#main {
+  text-align: center;
+  position: relative;
+  top: 18em;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: #f00;
+}
+
+#guess-list {
+  list-style: none;
+}

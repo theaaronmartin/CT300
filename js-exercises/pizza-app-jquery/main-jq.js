@@ -70,8 +70,8 @@ $(function() {
   var loadPizzaOptions = function() {
     var caretText = ' <span class="caret"></span>';
     pizzaDropdown.innerHTML = "Select a Pizza" + caretText;
-    pizzaDropdown.data('name');
-    pizzaDropdown.data('cost');
+    delete pizzaDropdown.data('name');
+    delete pizzaDropdown.data('cost');
     pizzaSizeList.html('');
 
 

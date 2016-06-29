@@ -1,16 +1,13 @@
 /*
 GOALS FOR PIZZA UNICORN
-
 2.  Orders contain one or many Pizzas
-
 3.  Pizzas have one or many Items
-
 4.  PU has many Delivery People
-
 5.  Orders get assigned to a Random Delivery Person
 */
 
 // *********** Initialize ***********
+
 $(function() {
   var pageAddCustomer = $('#page-add-customer');
   var pageAddPizza = $('#page-add-pizza');
@@ -55,28 +52,10 @@ $(function() {
     navigate(currentPage, pageAddPizza);
   });
 
-  // *********** Create Customer Page ***********
-  pageAddCustomer.css('display', 'block');
-  var currentPage = pageAddCustomer;
-
-  buttonCustomer.on( 'click', function() {
-    customer = new Customer(firstName.value, lastName.value, email.value, state.value, zip.value);
-    order = new Order(customer);
-
-    loadPizzaOptions();
-
-    console.log('');
-    console.log('------ Customer Order Created! ------');
-    console.log(customer);
-    console.log(order);
-
-    navigate(currentPage, pageAddPizza);
-  });
-
   // *********** Add Pizzas Page ***********
   buttonPizza.on( 'click', function() {
     pizza = new Pizza();
-    var pizzaSize = new PizzaSize(pizzaDropdown.dataset.name, pizzaDropdown.dataset.cost);
+    var pizzaSize = new PizzaSize(pizzaDropdown.data('name'), pizzaDropdown.data('cost'));
     pizza.setSize(pizzaSize);
     order.addPizza(pizza);
 
@@ -91,28 +70,28 @@ $(function() {
   var loadPizzaOptions = function() {
     var caretText = ' <span class="caret"></span>';
     pizzaDropdown.innerHTML = "Select a Pizza" + caretText;
-    delete pizzaDropdown.dataset.name;
-    delete pizzaDropdown.dataset.cost;
-    pizzaSizeList.innerHTML = '';
+    pizzaDropdown.data('name');
+    pizzaDropdown.data('cost');
+    pizzaSizeList.html('');
 
 
-    for (i = 0; i < allPizzaSizes.length; i++) {
-      var listItemLink = document.createElement('a');
+    $.each(allPizzaSizes, function() {
+      $listItemLink = $('<a></>');
       listItemLink.attr('href', '#');
-      listItemLink.dataset.name = allPizzaSizes[i].name;
-      listItemLink.dataset.cost = allPizzaSizes[i].cost;
-      listItemLink.innerHTML = allPizzaSizes[i].name;
+      listItemLink.data('name') = this.data('name');
+      listItemLink.data('cost') = this.data('cost');
+      listItemLink.html(allPizzaSizes.name);
 
       listItemLink.on( 'click', function() {
-        pizzaDropdown.innerHTML = this.innerHTML + caretText;
-        pizzaDropdown.dataset.name = this.dataset.name;
-        pizzaDropdown.dataset.cost = this.dataset.cost;
+        pizzaDropdown.html('this.html + caretText;')
+        pizzaDropdown.data('name') = this.name;
+        pizzaDropdown.data('cost') = this.cost;
       });
 
-      var listItem = document.createElement('li');
-      listItem.appendChild(listItemLink);
-      pizzaSizeList.appendChild(listItem);
-    }
+      $listItem = $('<li></li>');
+      $listItem.append($listItemLink);
+      pizzaSizeList.append($listItem);
+    });
 
   }
 
@@ -137,14 +116,14 @@ $(function() {
 
   // *********** Navigation ***********
   var navigate = function(pageFrom, pageTo) {
-    pageFrom.style.display = 'none';
+    pageFrom.css('display', 'none');
     currentPage = pageTo;
-    currentPage.style.display = 'block';
+    currentPage.css('display', 'block');
   }
 
   // Nav links
   for (i = 0; i < navLinks.length; i++) {
-    navLinks[i].on( 'click', function() {
+    navLinks.on( 'click', function() {
       switch (this.id) {
         case 'link-customer':
           navigate(currentPage, pageAddCustomer);

@@ -55,7 +55,7 @@ $(function() {
   // *********** Add Pizzas Page ***********
   buttonPizza.on( 'click', function() {
     pizza = new Pizza();
-    var pizzaSize = new PizzaSize(pizzaDropdown.data('name'), pizzaDropdown.data('cost'));
+    var pizzaSize = new PizzaSize(pizzaDropdown.data('name'), parseFloat(pizzaDropdown.data('cost')));
     pizza.setSize(pizzaSize);
     order.addPizza(pizza);
 
@@ -73,24 +73,24 @@ $(function() {
     delete pizzaDropdown.data('name');
     delete pizzaDropdown.data('cost');
     pizzaSizeList.html('');
+    toppingList.html('');
 
 
-    $.each(allPizzaSizes, function() {
-      $listItemLink = $('<a></>');
-      listItemLink.attr('href', '#');
-      listItemLink.data('name') = this.data('name');
-      listItemLink.data('cost') = this.data('cost');
-      listItemLink.html(allPizzaSizes.name);
+    $.each(allPizzaSizes, function(index, size) {
+      var listItemLink = $('<a href="#"></>');
+      listItemLink.data('name', size.name);
+      listItemLink.data('cost', size.cost);
+      listItemLink.html(size.name);
 
       listItemLink.on( 'click', function() {
         pizzaDropdown.html('this.html + caretText;')
-        pizzaDropdown.data('name') = this.name;
-        pizzaDropdown.data('cost') = this.cost;
+        pizzaDropdown.data('name', listItemLink.data('name'));
+        pizzaDropdown.data('cost', listItemLink.data('cost'));
       });
 
-      $listItem = $('<li></li>');
-      $listItem.append($listItemLink);
-      pizzaSizeList.append($listItem);
+      var listItem = $('<li></li>');
+      listItem.append(listItemLink);
+      pizzaSizeList.append(listItem);
     });
 
   }

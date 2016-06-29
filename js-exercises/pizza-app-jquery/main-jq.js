@@ -8,7 +8,6 @@ GOALS FOR PIZZA UNICORN
 
 // *********** Initialize ***********
 
-$(function() {
   var pageAddCustomer = $('#page-add-customer');
   var pageAddPizza = $('#page-add-pizza');
   var pageCart = $('#page-cart');
@@ -39,7 +38,7 @@ $(function() {
   var currentPage = pageAddCustomer;
 
   buttonCustomer.on('click', function() {
-    customer = new Customer(firstName.value, lastName.value, email.value, state.value, zip.value);
+    customer = new Customer(firstName.val(), lastName.val(), email.val(), state.val(), zip.val());
     order = new Order(customer);
 
     loadPizzaOptions();
@@ -69,21 +68,21 @@ $(function() {
 
   var loadPizzaOptions = function() {
     var caretText = ' <span class="caret"></span>';
-    pizzaDropdown.innerHTML = "Select a Pizza" + caretText;
+    pizzaDropdown.html("Select a Pizza" + caretText);
     delete pizzaDropdown.data('name');
     delete pizzaDropdown.data('cost');
     pizzaSizeList.html('');
     toppingList.html('');
 
 
-    $.each(allPizzaSizes, function(index, size) {
-      var listItemLink = $('<a href="#"></>');
-      listItemLink.data('name', size.name);
-      listItemLink.data('cost', size.cost);
-      listItemLink.html(size.name);
+    $.each(allPizzaSizes, function() {
+      var listItemLink = $('<a href="#"></a>');
+      listItemLink.data('name', this.name);
+      listItemLink.data('cost', this.cost);
+      listItemLink.html(this.name);
 
       listItemLink.on( 'click', function() {
-        pizzaDropdown.html('this.html + caretText;')
+        pizzaDropdown.html(listItemLink.html() + caretText);
         pizzaDropdown.data('name', listItemLink.data('name'));
         pizzaDropdown.data('cost', listItemLink.data('cost'));
       });
@@ -92,6 +91,15 @@ $(function() {
       listItem.append(listItemLink);
       pizzaSizeList.append(listItem);
     });
+
+    $.each(allToppings, function() {
+      var toppingDiv = $('<div></div>');
+      var toppingLabel = $('<label></label>');
+      var toppingInput = $('<input></input>');
+
+      toppingDiv.addClass('checkbox');
+      toppingLabel.
+    })
 
   }
 
@@ -112,6 +120,37 @@ $(function() {
     loadPizzaOptions();
     navigate(currentPage, pageAddPizza);
   });
+
+  var showCart = function() {
+
+    cartDisplay.html('');
+
+    for (i = 0; i < order.pizzas.length; i++) {
+      var pizza = order.pizzas[i];
+      var pizzaDisplay = $('<p></p>');
+      pizzaDisplay.html(pizza.size.name + ': $' + pizza.size.cost.toFixed(2));
+      var toppingListDisplay = $('<ul></ul>');
+
+      for (x = 0; x < pizza.toppings.length; x++) {
+        var toppingItem = $('<li></li>');
+        var thisTopping = pizza.toppings[x];
+        toppingItem.html(thisTopping.name + ': $' + thisTopping.cost.toFixed(2));
+        toppingListDisplay.append(toppingItem);
+        console.log(toppingListDisplay);
+      }
+
+      pizzaDisplay.append(toppingListDisplay);
+      var pizzaTotal = $('Pizza Total: $' + pizza.totalCost.toFixed(2));
+      pizzaDisplay.append(pizzaTotal);
+
+
+      cartDisplay.append(pizzaDisplay);
+    }
+
+    var orderTotal = $('<p></p>');
+    orderTotal.html('Order Total: $' + order.totalCost.toFixed(2));
+    cartDisplay.append(orderTotal);
+  }
 
 
   // *********** Navigation ***********
@@ -211,5 +250,3 @@ $(function() {
     this.phone = phone,
     this.car = car
   }
-
-});

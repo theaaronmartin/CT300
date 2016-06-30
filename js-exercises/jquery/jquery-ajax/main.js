@@ -30,6 +30,7 @@ function Post(body, id, title, userId) {
 };
 
 var display = function() {
-  var loadPosts = document.getElementsByTagName('p');
-  loadPosts.append('<p></p>');
+  $.each(postList, function() {
+    
+  })
 }

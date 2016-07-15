@@ -43,8 +43,10 @@ end
 
 class Game
   def start
-    player1 = Player.new 'X'
-    player2 = Player.new 'O'
+    board = Board.new
+    player1 = Player.new X
+    player2 = Player.new O
+    current_player = player1
   end
 end
 
